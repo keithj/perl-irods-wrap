@@ -142,6 +142,7 @@ jobs:
         run: |
           conda activate "$CONDA_TEST_ENVIRONMENT"
 
+          eval $(perl -I ${{ env.PERL_CACHE }}/lib/perl5/ -Mlocal::lib)
           eval $(perl -I ${{ env.PERL_CACHE }}/lib/perl5/ -Mlocal::lib="$NPG_LIB")
           export PERL5LIB="$PWD:$PERL5LIB"
 
